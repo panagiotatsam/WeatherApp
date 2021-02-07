@@ -1,16 +1,15 @@
-package services;
+package application;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Scanner;
 
 import model.weatherdb.CityInfo;
-import model.weatherdb.WeatherClientIPAddress;
+import model.weatherdb.IpAddressLocation;
 import model.weatherdb.WeatherInfo;
-import model.weatherdb.Weather__;
-import services.WeatherApiServiceTODELETE;
+import services.WeatherApiService;
+
 
 public class WeatherAPP {
 
@@ -96,8 +95,8 @@ public class WeatherAPP {
 	}
 
 	private static void PrintCurrentWeatherFromIp() {
-		WeatherApiServiceTODELETE weatherService = new WeatherApiServiceTODELETE(unitSystem);
-		WeatherClientIPAddress locationFromIp = weatherService.GetLocationFromIp();
+		WeatherApiService weatherService = new WeatherApiService(unitSystem);
+		IpAddressLocation locationFromIp = weatherService.GetLocationFromIp();
 		System.out.println("You are connected from "+ locationFromIp.getCity() + ", " +locationFromIp.getCountry());
 		WeatherInfo c = weatherService.GetWeather(locationFromIp.getLatitude(), locationFromIp.getLongitude());
 		
@@ -117,7 +116,7 @@ public class WeatherAPP {
 			cityIndex = s.nextInt();
 		}
 
-		WeatherApiServiceTODELETE weatherService = new WeatherApiServiceTODELETE(unitSystem);
+		WeatherApiService weatherService = new WeatherApiService(unitSystem);
 
 		WeatherInfo c = weatherService.GetWeather(lat[cityIndex], lon[cityIndex]);
 
@@ -129,7 +128,7 @@ public class WeatherAPP {
 
 	private static void GetFromTypedCities(Scanner s) {
 		System.out.println("Please insert city name");
-		WeatherApiServiceTODELETE weatherService = new WeatherApiServiceTODELETE(unitSystem);
+		WeatherApiService weatherService = new WeatherApiService(unitSystem);
 		s.nextLine();
 		String cityName = s.nextLine();
 		CityInfo[] cityInfo = weatherService.GetCityInfo(cityName);	
@@ -172,7 +171,7 @@ public class WeatherAPP {
 			Date date = new Date(c.getDaily().get(i).getDt() * 1000);
 			double max = c.getDaily().get(i).getTemp().getMax();
 			String description = c.getDaily().get(i).getWeather().get(0).getDescription();
-			long pop = c.getDaily().get(i).getPop();
+			double pop = c.getDaily().get(i).getPop();
 			long humidity = c.getDaily().get(i).getHumidity();
 			double windSpeed = c.getDaily().get(i).getWindSpeed();
 			long windDeg = c.getDaily().get(i).getWindDeg();

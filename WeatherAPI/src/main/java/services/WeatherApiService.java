@@ -14,16 +14,16 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import model.weatherdb.CityInfo;
-import model.weatherdb.WeatherClientIPAddress;
+import model.weatherdb.IpAddressLocation;
 import model.weatherdb.WeatherInfo;
 
-public class WeatherApiServiceTODELETE {
+public class WeatherApiService {
 	
 	private String units;
 	
 	private static String apiKey = "60278b3d9ec4bbe903d10e5b6aa3e777";
 	
-	public WeatherApiServiceTODELETE(String units) {
+	public WeatherApiService(String units) {
 		this.units = units;
 	}
 
@@ -56,7 +56,7 @@ public class WeatherApiServiceTODELETE {
 		return new WeatherInfo();
 	}
 		
-	public WeatherClientIPAddress GetLocationFromIp() {
+	public IpAddressLocation GetLocationFromIp() {
 		DefaultHttpClient httpClient = new DefaultHttpClient();
 
 		try {
@@ -65,12 +65,12 @@ public class WeatherApiServiceTODELETE {
 
 			HttpResponse response = httpClient.execute(getRequest);
 
-			WeatherClientIPAddress c = null;
+			IpAddressLocation c = null;
 
 			ObjectMapper mapper = new ObjectMapper();
 
 			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-			c = mapper.readValue(response.getEntity().getContent(), WeatherClientIPAddress.class);
+			c = mapper.readValue(response.getEntity().getContent(), IpAddressLocation.class);
             return c;			
 
 		} catch (JsonMappingException e) {
@@ -80,7 +80,7 @@ public class WeatherApiServiceTODELETE {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return new WeatherClientIPAddress();
+		return new IpAddressLocation();
 	}
 	
 	public CityInfo[] GetCityInfo(String cityName) {

@@ -3,7 +3,7 @@ package model.weatherdb;
 
 
 
-public class WeatherClientIPAddress {
+public class IpAddressLocation {
 
     private String ip;
     private String version;
@@ -36,7 +36,7 @@ public class WeatherClientIPAddress {
      * No args constructor for use in serialization
      * 
      */
-    public WeatherClientIPAddress() {
+    public IpAddressLocation() {
     }
 
     /**
@@ -68,7 +68,7 @@ public class WeatherClientIPAddress {
      * @param region
      * @param asn
      */
-    public WeatherClientIPAddress(String ip, String version, String city, String region, String regionCode, String country, String countryName, String countryCode, String countryCodeIso3, String countryCapital, String countryTld, String continentCode, boolean inEu, String postal, double latitude, double longitude, String timezone, String utcOffset, String countryCallingCode, String currency, String currencyName, String languages, double countryArea, double countryPopulation, String asn, String org) {
+    public IpAddressLocation(String ip, String version, String city, String region, String regionCode, String country, String countryName, String countryCode, String countryCodeIso3, String countryCapital, String countryTld, String continentCode, boolean inEu, String postal, double latitude, double longitude, String timezone, String utcOffset, String countryCallingCode, String currency, String currencyName, String languages, double countryArea, double countryPopulation, String asn, String org) {
         super();
         this.ip = ip;
         this.version = version;
