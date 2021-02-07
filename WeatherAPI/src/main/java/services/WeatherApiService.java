@@ -29,6 +29,10 @@ public class WeatherApiService {
 
 	public WeatherInfo GetWeather(double lat, double lon) {
 		DefaultHttpClient httpClient = new DefaultHttpClient();
+		
+		if (lat > 90 || lat <-90 || lon >180 || lon < -180) {
+			return null;
+		}
 
 		try {
 			HttpGet getRequest = new HttpGet("http://api.openweathermap.org/data/2.5/onecall?lat=" + lat
