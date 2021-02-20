@@ -18,7 +18,7 @@ public class WeatherApiService {
 	
 	private String units;
 	//personal apikey
-	private static String apiKey = "60278b3d9ec4bbe903d10e5b6aa3e777";
+	private static String apiKey = "use here your own api key, eg '505fdg76659edc4bb5460e5b6ahgjyf56' ";
 	
 	public WeatherApiService(String units) {
 		this.units = units;
