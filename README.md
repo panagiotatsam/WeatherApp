@@ -13,7 +13,8 @@ You'll need to go create an account to get an API key (https://home.openweatherm
 
 # Dependencies
 ### Jackson (for the JSON -> Java POJO Deserialization)
-```<dependency>
+```
+<dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.12.1</version>
@@ -21,7 +22,8 @@ You'll need to go create an account to get an API key (https://home.openweatherm
 ```
 
 ### JUnit (for writing Unit Tests)
-```<dependency>
+```
+<dependency>
       <groupId>junit</groupId>
       <artifactId>junit-dep</artifactId>
       <version>4.11</version>
@@ -31,7 +33,8 @@ You'll need to go create an account to get an API key (https://home.openweatherm
 ```
 
 ### Apache HttpClient (to consume the API)
-```<dependency>
+```
+<dependency>
    <groupId>org.apache.httpcomponents</groupId>
    <artifactId>httpclient</artifactId>
    <version>4.1.1</version>
@@ -39,7 +42,8 @@ You'll need to go create an account to get an API key (https://home.openweatherm
 ```
 
 ### Apache Log4j
-```<dependency>
+```
+<dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.14.0</version>
@@ -49,7 +53,8 @@ You'll need to go create an account to get an API key (https://home.openweatherm
 ### Maven Coordinates
 To add this library as a dependency add the following maven coordinates into your pom.xml file
 
-```<dependency>
+```
+<dependency>
     <groupId>gr.unipi.gr</groupId>
     <artifactId>WeatherAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
