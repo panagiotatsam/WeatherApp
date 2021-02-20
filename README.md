@@ -4,9 +4,9 @@ An academic project to showcase how to consume a RESTful web service with Java t
 Management with Maven
 
 # API
-One Call API
-Geocoding API
-IP address location API
+One Call API: https://openweathermap.org/api/one-call-api
+Geocoding API: https://openweathermap.org/api/geocoding-api#direct_example
+IP address location API: https://ipapi.co/api/?java#location-of-clients-ip
 
 # Requirements
 You'll need to go create an account to get an API key (https://home.openweathermap.org/api_keys)
